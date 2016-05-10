@@ -1,11 +1,3 @@
-/*
---------------------------
-Name:	Nathan Essel
-Email:	nve1@zips.uakron.edu
-Program:	burst.c
-Description:	Split a file into separate files based on the number of lines specified by the user.
---------------------------
-*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -17,19 +9,40 @@ Description:	Split a file into separate files based on the number of lines speci
 int main(int argc, char* argv[])
 {
   char buffer[16384];
-  int bytes_read;
+  char new_buffer[16384];
+  ssize_t bytes_read;
+  ssize_t bytes_written;  
   int line_count = 0;
-
-  int fd = open(argv[1], O_RDONLY);
-
-  while (bytes_read = read(fd, buffer, sizeof(buffer)))
-  {
-    int i;
-    for (i=0; i<bytes_read; i++)
-      if (buffer[i] == '\n')
-	++line_count;
-  }
-
-  printf("Number of lines %d\n",line_count);
+  int copied = 0;
   
+  int in_fd = open(argv[1], O_RDONLY);
+  int out_fd = open("out1.txt", O_WRONLY | O_CREAT, 0644);
+  int out2_fd = open("out2.txt", O_WRONLY | O_CREAT, 0644); 
+  
+  while ((bytes_read = read(in_fd, &buffer, sizeof(buffer))) > 0)
+    {
+      for (int i=0; i<bytes_read; i++)
+	{
+	  new_buffer[copied] = buffer[i];
+	  copied++;
+	  if (buffer[i] == '\n')
+	    {
+	      line_count++;
+	      if (line_count == 2)
+		{
+		  bytes_written = write(out_fd, &new_buffer, copied);
+		  copied = 0;
+		}
+	    }
+	}
+    }
+  
+  if (copied > 0)
+    {
+      bytes_written = write(out2_fd, &new_buffer, copied);
+    }
+  
+  return 1;
+  printf("Number of lines %d\n",line_count);
 }
+
