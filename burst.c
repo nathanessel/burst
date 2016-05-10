@@ -15,9 +15,20 @@ int main(int argc, char* argv[])
   int line_count = 0;
   int copied = 0;
   
-  int in_fd = open(argv[1], O_RDONLY);
-  int out_fd = open("out1.txt", O_WRONLY | O_CREAT, 0644);
+   int out_fd = open("out1.txt", O_WRONLY | O_CREAT, 0644); 
   int out2_fd = open("out2.txt", O_WRONLY | O_CREAT, 0644); 
+
+  if (argc != 2)
+    {
+      printf("Usage: ./burst file.txt");
+	return 1;
+    }
+
+  int in_fd = open(argv[1], O_RDONLY);
+  if (in_fd == -1)
+    {
+      perror ("open");
+    }
   
   while ((bytes_read = read(in_fd, &buffer, sizeof(buffer))) > 0)
     {
