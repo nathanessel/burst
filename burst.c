@@ -73,6 +73,12 @@ int main(int argc, char* argv[])
 
 		  out_fd = open(filename2, O_WRONLY | O_CREAT, 0644); 		  
 		  bytes_written = write(out_fd, &new_buffer, copied);
+
+		  if (bytes_written != copied)
+		    {
+		      perror("write");
+		      return 3;
+		    }
 		  
 		  copied = 0;
 		  line_count = 0;
@@ -93,9 +99,13 @@ int main(int argc, char* argv[])
 
       out2_fd = open(filename2, O_WRONLY | O_CREAT, 0644);
       bytes_written = write(out2_fd, &new_buffer, copied);
+
+      if (bytes_written != copied)
+	{
+	  perror("write");
+	  return 4;
+	}
     }
-  
   return (EXIT_SUCCESS);
-  printf("Number of lines %d\n",line_count);
 }
 
