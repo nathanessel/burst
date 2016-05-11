@@ -34,5 +34,17 @@ To split a file by a specified amount (ex\. 100 lines):
 .IP "\(bu" 4
 $ \fBburst\fR \-m100 data\.txt\'
 .
+.IP "\(bu" 4
+$ \fBls\fR
+.
+.IP "\(bu" 4
+data\.txt data1\.txt data2\.txt
+.
+.IP "\(bu" 4
+$ \fBwc\fR \-\-lines data1\.txt
+.
+.IP "\(bu" 4
+100
+.
 .IP "" 0
 

@@ -17,3 +17,10 @@ To split a file into multiple files by the default 500 line:
 To split a file by a specified amount (ex. 100 lines):
 
    * $ `burst` -m100 data.txt'
+   * $ `ls`
+
+   * data.txt data1.txt data2.txt
+
+   * $ `wc` --lines data1.txt
+
+   * 100
