@@ -16,7 +16,7 @@ burst \-\- Splits an inputted file into multiple files\. ====
 \fBburst\fR is a program that splits a file into multiple files\. By default, the original file is split into multiple smaller files by breaking them into 500 lines each\.
 .
 .IP "\(bu" 4
-\fB\-o\fR Splits the original file by this specified amount
+\fB\-m\fR Splits the original file by this specified amount
 .
 .IP "" 0
 .

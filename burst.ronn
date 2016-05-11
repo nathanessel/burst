@@ -7,7 +7,7 @@ burst -- Splits an inputted file into multiple files. ====
 ## DESCRIPTION
 `burst` is a program that splits a file into multiple files.  By default, the original file is split into multiple smaller files by breaking them into 500 lines each.
 
-* `-o`    Splits the original file by this specified amount
+* `-m`    Splits the original file by this specified amount
 
 ## EXAMPLES
 To split a file into multiple files by the default 500 line:

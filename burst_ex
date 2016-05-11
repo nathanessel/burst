@@ -1,4 +1,4 @@
-nve1@unix:~/Project4/burst$ ./burst --help
+nve1@unix:~/Project4/burst$ exitman ./burst.man cat data1.txt data2.txt | diff - data.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20Pwc --lines data1.txt ls[Kburst -m10 data.txt [5P-version[3Phelpls[Kexitcho $PATHvi .bashrc[4Pls -lavi .bashrcecho $PATH[6Pxit[2Plsburst --helpversion[3Phelp
 burst 1.0, a file splitter.
 Usage: burst [OPTION] filename
 
@@ -7,21 +7,19 @@ Mandatory arguments to long options are mandatory for short options too.
 -v, --version         Displays the version of burst and exits.
 -h, --help            Prints this help.
 -m, --maxlines=int    The maximum number of lines in each file.
-nve1@unix:~/Project4/burst$ ./burst --help[K[K[K[Kversion
+nve1@unix:~/Project4/burst$ burst --help[8Pexitman ./burst.man cat data1.txt data2.txt | diff - data.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20Pwc --lines data1.txt ls[Kburst -m10 data.txt [5P-version[3Phelpls[Kburst --helpversion
 busrt Version 1.0
 2016 Nathan Essel
 
 burst comes with NO WARRANTY, to the extent permitted by law.
 This is free software: you are free to change and redistribute it.
-nve1@unix:~/Project4/burst$ ls
-[0m[01;32mburst[0m  burst.c  burst.html  burst.man  burst.ronn  burst.ronn~  data.txt  README.md  screenlog.0  [01;32mtest[0m
-nve1@unix:~/Project4/burst$ wc data.txt [C[1@ [1@-[1@-[1@l[1@i[1@n[1@e[1@s
+nve1@unix:~/Project4/burst$ burst --version[3Phelp[8Pexitman ./burst.man cat data1.txt data2.txt | diff - data.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20Pwc --lines data1.txt ls[Kburst -m10 data.txt [5P-version[3Phelpversionm10 data.txt [5P-version[3Phelpls[Kburst --helpversionm10 data.txt ls[Kwc --lines data1.txt [1P
 20 data.txt
-nve1@unix:~/Project4/burst$ ./br[Kurst -k[Km10 data.txt
-nve1@unix:~/Project4/burst$ ls
+nve1@unix:~/Project4/burst$ wc --lines data.txt [5Pburst --version[3Phelp[8Pexitman ./burst.man cat data1.txt data2.txt | diff - data.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20Pwc --lines data1.txt ls[Kburst -m10 data.txt [5P-versionm10 data.txt 
+nve1@unix:~/Project4/burst$ burst -m10 data.txt wc --lines[C[C[C[C[C[C[C[C[C[C[5Pburst --version[3Phelp[8Pexitman ./burst.man cat data1.txt data2.txt | diff - data.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20Pwc --lines data1.txt ls[Kburst -m10 data.txt ls[K
 [0m[01;32mburst[0m  burst.c  burst.html  burst.man  burst.ronn  burst.ronn~  data1.txt  data2.txt  data.txt  README.md  screenlog.0  [01;32mtest[0m
-nve1@unix:~/Project4/burst$ wc --lines data1,txt[K[K[K[K.txt
+nve1@unix:~/Project4/burst$ lsburst -m10 data.txt wc --lines[C[C[C[C[C[C[C[C[C[C[5Pburst --version[3Phelp[8Pexitman ./burst.man cat data1.txt data2.txt | diff - data.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20Pwc --lines data1.txt ls[Kwc --lines data1.txt 
 10 data1.txt
-nve1@unix:~/Project4/burst$ cat data1.txt s[Kdata2.txt | diff - data.txt
-nve1@unix:~/Project4/burst$ exit
+nve1@unix:~/Project4/burst$ wc --lines data1.txt ls[Kburst -m10 data.txt wc --lines[C[C[C[C[C[C[C[C[C[C[5Pburst --version[3Phelp[8Pexitman ./burst.man cat data1.txt data2.txt | diff - data.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20Pwc --lines data1.txt ls[Kwc --lines data1.txt cat data1.txt data2.txt | diff - data.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20Pwc --lines data1.txt cat data1.txt data2.txt | diff - data.txt
+nve1@unix:~/Project4/burst$ cat data1.txt data2.txt | diff - data.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[20Pwc --lines data1.txt cat data1.txt data2.txt | diff - data.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kexit
 exit
