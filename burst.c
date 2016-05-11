@@ -6,9 +6,51 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <string.h>
+#include <getopt.h>
 
 int main(int argc, char* argv[])
 {
+  
+  static struct option long_options[] = {
+    {"version", no_argument, 0, 'v'},
+    {"help", no_argument, 0, 'h'},
+    {"maxlines", required_argument, 0, 'm'},
+    {0,0,0,0}
+  };
+
+  int max_lines = 10;
+  int c = 0;
+  int option_index = 0;
+  while ((c = getopt_long(argc, argv, "h:v:m:",
+			  long_options, &option_index)) != -1) {
+    switch (c) {
+    case 'h' :
+      printf("HELP!\n");
+      return 1;
+      break;
+    case 'v' :
+      printf("busrt Version 1.0\n2016 Nathan Essel\n\nburst comes with NO WARRANTY, to the extent permitted by law.\nThis is free software: you are free to change and redistribute it.\n");
+      return 1;
+      break;
+    case 'm' :
+      max_lines = atoi(optarg);
+      
+    }
+  }
+
+  if (argc < 2)
+    {
+      printf("Usage: burst [OPTION] filename\n");
+      return 1;
+    }
+
+  int in_fd = open(argv[argc-1], O_RDONLY);
+  if (in_fd == -1)
+    {
+      perror ("open");
+      return 2;
+    }
+  
   char buffer[16384];
   char new_buffer[16384];
   ssize_t bytes_read;
@@ -17,7 +59,7 @@ int main(int argc, char* argv[])
   int copied = 0;
   int file_count = 0;
 
-  char *input = argv[1];
+  char *input = argv[argc-1];
   char filename1[1000];
   char *filename2 = malloc(strlen(input) + 1);
 
@@ -38,21 +80,6 @@ int main(int argc, char* argv[])
   int out_fd;
   int out2_fd; 
 
-  int max_lines = 10;
-  
-  if (argc != 2)
-    {
-      printf("Usage: ./burst file.txt");
-      return 1;
-    }
-  
-  int in_fd = open(argv[1], O_RDONLY);
-  if (in_fd == -1)
-    {
-      perror ("open");
-      return 2;
-    }
-  
   while ((bytes_read = read(in_fd, &buffer, sizeof(buffer))) > 0)
     {
       for (int i=0; i<bytes_read; i++)
