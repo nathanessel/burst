@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
     {0,0,0,0}
   };
 
-  int max_lines = 10;
+  int max_lines = 500;
   int c = 0;
   int option_index = 0;
   while ((c = getopt_long(argc, argv, "h:v:m:",
