@@ -25,7 +25,7 @@ int main(int argc, char* argv[])
 			  long_options, &option_index)) != -1) {
     switch (c) {
     case 'h' :
-      printf("HELP!\n");
+      printf("burst 1.0, a file splitter.\nUsage: burst [OPTION] filename\n\nMandatory arguments to long options are mandatory for short options too.\n\n-v, --version         Displays the version of burst and exits.\n-h, --help            Prints this help.\n-m, --maxlines=int    The maximum number of lines in each file.\n");
       return 1;
       break;
     case 'v' :
